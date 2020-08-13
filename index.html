@@ -3,6 +3,29 @@
 <title>The Weikang Gong's Homepage</title>
 </head>
 <body>
+<div id="img" style="position: absolute; left: 300; top: 800; visibility: hidden; 
+	border: 2px solid #000; width:200px; height:100px; background:#0096C3" 
+	onmouseover="clearInterval(interval)" 
+	onmouseout="interval = setInterval('changePos()', delay)" 
+	align="center">
+		<font face="Times New Roman" size=4>
+		<b>
+		<a name="Some people want it to happen, some wish it would happen, others make it happen.">
+			Some people want it to happen, some wish it would happen, others make it happen.
+		</a>
+		</b> 
+		</font>
+<div style="cursor: pointer; color: #000; margin: 3 0 3 0; width: 100%; text-align: center;" 
+	onclick="clearInterval(interval); img.style.visibility='hidden'">
+		<font face="Times New Roman" size=2>
+		<b>
+		<a name="Close">
+			Close
+		</a>
+		</b> 
+		</font>
+</div>
+</div>
 <div align="center">
 <table width="1000" id="table1" bgcolor="#FFFFFF">
 	<tr>
@@ -208,7 +231,7 @@
 		</td>
 	</tr>
 	<tr>
-		<td align="left" width="200">
+		<td align="center" width="200">
 		<font face="Times New Roman" size=4>
 		2011-2015
 		</font>
@@ -222,7 +245,7 @@
 		</td>
 	</tr>
 	<tr>
-		<td align="left" width="200" bgcolor="#E0E0E0">
+		<td align="center" width="200" bgcolor="#E0E0E0">
 		<font face="Times New Roman" size=4>
 		2015-2017
 		</font>
@@ -236,7 +259,7 @@
 	</tr>
 	</tr>
 	<tr>
-		<td align="left" width="200">
+		<td align="center" width="200">
 		<font face="Times New Roman" size=4>
 		2017-present
 		</font>
@@ -682,6 +705,54 @@
 		</td>
 	</tr>
 	<tr>
+		<td align="center" width="200">
+		<font face="Times New Roman" size=4>
+		2019-2020
+		</font>
+		</td>
+		<td align="justify" width="800" colspan="2">
+		<font face="Times New Roman" size=4>
+		The Award of China Scholarship Council
+		</font>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" width="200" bgcolor="#E0E0E0">
+		<font face="Times New Roman" size=4>
+		2018-2019
+		</font>
+		</td>
+		<td align="justify" width="800" colspan="2" bgcolor="#E0E0E0">
+		<font face="Times New Roman" size=4>
+		School of Social Work Awards - Graduate
+		</font>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" width="200">
+		<font face="Times New Roman" size=4>
+		2018-2019
+		</font>
+		</td>
+		<td align="justify" width="800" colspan="2">
+		<font face="Times New Roman" size=4>
+		Postgraduate Excellent Style of Study
+		</font>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" width="200" bgcolor="#E0E0E0">
+		<font face="Times New Roman" size=4>
+		2017-2018
+		</font>
+		</td>
+		<td align="justify" width="800" colspan="2" bgcolor="#E0E0E0">
+		<font face="Times New Roman" size=4>
+		School of Social Work Awards - Graduate
+		</font>
+		</td>
+	</tr>
+	<tr>
 		<td width="1000" height="30" valign="middle" colspan="3" bgcolor="#0096C3">
 		<font face="Times New Roman" size=4>
 		<b>
@@ -693,7 +764,7 @@
 		</td>
 	</tr>
 	<tr>
-		<td align="left" width="200">
+		<td align="center" width="200">
 		<font face="Times New Roman" size=4>
 		2011-2015
 		</font>
@@ -706,7 +777,7 @@
 		</td>
 	</tr>
 	<tr>
-		<td align="left" width="200" bgcolor="#E0E0E0">
+		<td align="center" width="200" bgcolor="#E0E0E0">
 		<font face="Times New Roman" size=4>
 		2015-2017
 		</font>
@@ -719,7 +790,7 @@
 		</td>
 	</tr>
 	<tr>
-		<td align="left" width="200">
+		<td align="center" width="200">
 		<font face="Times New Roman" size=4>
 		2017-2019
 		</font>
@@ -732,7 +803,7 @@
 		</td>
 	</tr>
 	<tr>
-		<td align="left" width="200" bgcolor="#E0E0E0">
+		<td align="center" width="200" bgcolor="#E0E0E0">
 		<font face="Times New Roman" size=4>
 		2017-present
 		</font>
@@ -810,7 +881,7 @@
 		<td width="1000" align="center" valign="middele" colspan="3">
 		<font face="Times New Roman" size=3>
 		<b>
-		<p>&copy2020 Weikang Gong. Updated Date: 08-12-2020</p>
+		<p>Copyright&copy2020 Weikang Gong. Updated Date: 08-12-2020</p>
 		</b>
 		</font>
 		</td>
@@ -826,6 +897,65 @@
 	</tr>
 </table>
 </footer>
-</div>	
+</div>
+<script language=javascript>
+var xPos = 20;
+var yPos = document.body.clientHeight;
+var step = 1;
+var delay = 30;
+var height = 0;
+var Hoffset = 0;
+var Woffset = 0;
+var yon = 0;
+var xon = 0;
+var pause = true;
+var interval;
+img.style.top = yPos;
+function changePos() {
+width = document.body.clientWidth;
+height = document.body.clientHeight;
+Hoffset = img.offsetHeight;
+Woffset = img.offsetWidth;
+img.style.left = xPos + document.body.scrollLeft;
+img.style.top = yPos + document.body.scrollTop;
+if (yon) {
+yPos = yPos + step;
+}
+else {
+yPos = yPos - step;
+}
+if (yPos < 0) {
+yon = 1;
+yPos = 0;
+}
+if (yPos >= (height - Hoffset)) {
+yon = 0;
+yPos = (height - Hoffset);
+}
+if (xon) {
+xPos = xPos + step;
+}
+else {
+xPos = xPos - step;
+}
+if (xPos < 0) {
+xon = 1;
+xPos = 0;
+}
+if (xPos >= (width - Woffset)) {
+xon = 0;
+xPos = (width - Woffset);
+}
+}
+function start() {
+img.style.visibility = "visible";
+interval = setInterval('changePos()', delay);
+}
+start();
+</script>	
 </body>
 </html>
+
+
+
+
